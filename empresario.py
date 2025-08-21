@@ -1,58 +1,72 @@
 import os
-os.system("clear")
 
-menulogin="""bienvenid al programa de venta de productos
-      1. registrarse
-      2. iniciar sesion
-      3. salir
-      4. menuhome"""
-menuhome="""bienvenido al menu de inicio
-1. comprar
-2. inventario
-3. vender
-4. utilidades
-5. salir"""
+menuLogin="""Bienvenido al programa de venta de productos
+1. Registrarse
+2. Iniciar sesión
+3. Salir"""
 
-isActive=True
+menuHome="""Bienvenido al menu de inicio
+1. Comprar
+2. Inventario
+3. Vender
+4. Utilidades
+5. Salir"""
 
+isActiveLogin=True
 
-
-while isActive:
+while isActiveLogin:
     os.system("clear")
-    print(menulogin)
-    opcion=int(input("seleccione una opcion: "))
+    print(menuLogin)
+    option=int(input("Seleccione una opción: "))
 
-match opcion:
-    case 1:
-        os.system("clear")
-        print("registre su usuario")
-        userR=input("ingrese su usuario: ")
-        os.system("clear")   
-        paswordR=input("ingrese su contraseña: ")
-        os.system("clear") 
-    case 2:
-        os.system("clear")
-        print("inicia sesion")
-        userLogin=input("ingrese su nombre de usuario: ")
-        paswordLogin=input("ingrese su contraseña: ") 
-        if userR == userLoginn:
+    match option:
+        case 1:
             os.system("clear")
-            print("usuario correcto")
-        else:
-            print("usuario incorrecto") 
-        paswordLogin=input("ingrese su contraseña") 
-        if paswordR == paswordLogin:
-            print("iniciaste sesion correctamente")
-            os.system("pause")
-            print(menuhome)
-
-        else:
-            print("contraseña incorrecta")    
-    case 3:
-        print("gracias por usar el programa")     
-
-    case _:
-        print("opcion no valida")     
-
- 
-   
+            print("Registra tu usuario")
+            userRegister=input("Ingrese su nombre de usuario: ")
+            os.system("clear")
+            passwordRegister=input("Ingrese su contraseña: ")
+            os.system("clear")
+        case 2:
+            os.system("clear")
+            print("Inicia sesión")
+            userLogin=input("Ingrese su nombre de usuario: ")
+            if userRegister == userLogin:
+                os.system("clear")
+                print("Usuario correcto")
+                os.system("pause")
+                os.system("clear")
+                passwordLogin=input("Ingrese su contraseña: ")
+                if passwordRegister == passwordLogin:
+                    os.system("clear")
+                    print("Inciaste sesión correctamente")
+                    os.system("pause")
+                    isActiveHome=True
+                    while isActiveHome:
+                        os.system("clear")
+                        print(menuHome)
+                        opcion=int(input("Seleccione una opción: "))
+                        match opcion:
+                            case 1:
+                                pass
+                            case 2:
+                                pass
+                            case 3:
+                                pass
+                            case 4:
+                                pass
+                            case 5:
+                                isActiveHome=False
+                            case _:
+                                print("Opción no válida")
+                else:
+                    print("Contraseña incorrecta")
+                    os.system("pause")
+            else:
+                print("Usuario incorrecto")
+                os.system("pause")
+        case 3:
+            print("Gracias por usar el programa")
+            break
+        case _:
+            print("Opción no válida")
