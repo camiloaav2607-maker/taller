@@ -9,8 +9,11 @@ tercernumero=int(input("ingresa el tercer numero: "))
 if primernumero>segundonumero and tercernumero:
     print("el numero mayor es:",primernumero)
 
-if segundonumero>primernumero and tercernumero:
+elif segundonumero>primernumero and tercernumero:
     print("el numero mayor es:",segundonumero)
 
-if tercernumero>primernumero and segundonumero:
+elif tercernumero>primernumero and segundonumero:
     print("el numero mayo es: ",tercernumero)
+
+else:
+    print("opcion no valida")    
